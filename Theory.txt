@@ -1,0 +1,30 @@
+Problem statement 1:
+
+You need to create text editorwhere we need to type 1000's of letters.
+
+- Parameters of Letter are font, size , x coordinate and y coordinate
+- Here font is fixed - Times New Roman
+- Size is same for all letters - 10
+- x and y coordinates are different for all robots.
+
+-Here font and size are intrinsic objects means data can be shared among objects ( Here all letters )
+- x,y coordinates are extrinsic objects means data is different for all objects.
+
+
+-->
+
+- Flyweight design pattern helps to solve this. It is structural design pattern
+- We can group all Intrinsic objects in 1 class (Here font and size)
+- For Extrinsic objects create interface and pass these items as a method parameter.
+- Create 1 factory class to create objects.
+- So in factory we'll create 1 hashmap of type - Character, InterfaceLetter
+- We'll first check if object is already present is map if yes return, if not create new and put in map.
+- With the help of object we will render object on screen by passing x and y coordinates.
+- So at max only 26 objects will be created for 1000's of letters.
+
+THIS IS HOW MEMORY WILL BE REDUCED
+
+- Flyweight can be used when 
+* Memory limitation is there
+* We need to share data among objects
+* Object creation is heavy
